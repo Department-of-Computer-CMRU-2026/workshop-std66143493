@@ -151,9 +151,9 @@
 
     <!-- Hero -->
     <section class="relative pt-32 pb-24 px-6 overflow-hidden">
-        <div class="max-w-5xl mx-auto text-center stagger-item">
+        <div class="max-w-7xl mx-auto text-center stagger-item">
             <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse italic">ปฏิวัติการเรียนรู้ของคุณ</span>
-            <h1 class="text-6xl md:text-8xl font-black font-outfit hero-title mb-8 leading-[0.9] tracking-tight">
+            <h1 class="text-7xl md:text-9xl font-black font-outfit hero-title mb-8 leading-[0.9] tracking-tighter">
                 ปลดล็อกศักยภาพ <br>สู่ความเป็นเลิศ
             </h1>
             <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
@@ -172,9 +172,9 @@
     <section id="explore" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 stagger-item">
-                <div class="max-w-xl">
-                    <h2 class="text-4xl font-black font-outfit text-slate-900 mb-4 leading-none lowercase"><span class="text-indigo-600">#</span> เวิร์กช็อปที่เปิดสอน</h2>
-                    <p class="text-slate-500 font-medium">ที่นั่งมีจำนวนจำกัดในแต่ละรอบ แนะนำให้ลงทะเบียนล่วงหน้าเพื่อรักษาสิทธิ์ของคุณ</p>
+                <div class="max-w-xl text-left">
+                    <h2 class="text-5xl font-black font-outfit text-slate-900 mb-6 leading-none lowercase"><span class="text-indigo-600">#</span> เวิร์กช็อปที่เปิดสอน</h2>
+                    <p class="text-xl text-slate-500 font-medium">ที่นั่งมีจำนวนจำกัดในแต่ละรอบ แนะนำให้ลงทะเบียนล่วงหน้าเพื่อรักษาสิทธิ์ของคุณ</p>
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="flex -space-x-3 overflow-hidden">
@@ -229,6 +229,7 @@
 
                         <!-- CTA -->
                         <div class="mt-auto pt-6 border-t border-slate-100/50 flex items-center justify-between">
+                            @auth
                                 @if($event->is_registered)
                                     <button disabled class="w-full bg-slate-100 text-slate-400 py-2 rounded-xl font-black text-[10px] uppercase tracking-widest cursor-not-allowed">ลงทะเบียนสำเร็จแล้ว</button>
                                 @elseif($isClosed)

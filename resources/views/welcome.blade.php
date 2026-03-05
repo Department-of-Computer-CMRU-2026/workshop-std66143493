@@ -229,24 +229,23 @@
 
                         <!-- CTA -->
                         <div class="mt-auto pt-6 border-t border-slate-100/50 flex items-center justify-between">
-                            @auth
                                 @if($event->is_registered)
-                                    <button disabled class="w-full bg-slate-100 text-slate-400 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest cursor-not-allowed">ลงทะเบียนสำเร็จแล้ว</button>
+                                    <button disabled class="w-full bg-slate-100 text-slate-400 py-2 rounded-xl font-black text-[10px] uppercase tracking-widest cursor-not-allowed">ลงทะเบียนสำเร็จแล้ว</button>
                                 @elseif($isClosed)
-                                    <button disabled class="w-full bg-slate-50 text-slate-300 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest cursor-not-allowed">ปิดรับลงทะเบียน</button>
+                                    <button disabled class="w-full bg-slate-50 text-slate-300 py-2 rounded-xl font-black text-[10px] uppercase tracking-widest cursor-not-allowed">ปิดรับลงทะเบียน</button>
                                 @else
                                     <form action="{{ route('events.register') }}" method="POST" class="w-full">
                                         @csrf
                                         <input type="hidden" name="event_id" value="{{ $event->id }}">
-                                        <button type="submit" class="w-full btn-gradient text-white py-3 rounded-xl font-bold text-sm shadow-xl shadow-indigo-100 flex items-center justify-center gap-2">
+                                        <button type="submit" class="w-full btn-gradient text-white py-2 rounded-xl font-bold text-xs shadow-lg shadow-indigo-100 flex items-center justify-center gap-2">
                                             <span>ลงทะเบียนเข้าเรียน</span>
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                                         </button>
                                     </form>
                                 @endif
-                            @else
-                                <a href="{{ route('login') }}" class="w-full border-2 border-slate-900 text-slate-900 py-3 rounded-xl font-bold text-sm hover:bg-slate-900 hover:text-white transition-all text-center">เข้าสู่ระบบเพื่อสมัคร</a>
-                            @endauth
+@else
+                                <a href="{{ route('login') }}" class="w-full border-2 border-slate-900 text-slate-900 py-2 rounded-xl font-bold text-xs hover:bg-slate-900 hover:text-white transition-all text-center">เข้าสู่ระบบเพื่อสมัคร</a>
+@endauth
                         </div>
                     </div>
                 </div>

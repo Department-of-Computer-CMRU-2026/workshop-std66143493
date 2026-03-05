@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Workshop CMS - ประสบการณ์การเรียนรู้ระดับพรีเมียม</title>
+    <title>Workshop CMS - ประสบการณ์การเรียนรู้ระดับพรีเมียมaaaaaaaa</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

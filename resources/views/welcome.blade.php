@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Workshop CMS - Premium Learning Experience</title>
+    <title>Workshop CMS - ประสบการณ์การเรียนรู้ระดับพรีเมียม</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,10 +139,10 @@
             <div class="flex items-center gap-6">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ route('dashboard') }}" class="font-bold text-sm uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">Workspace</a>
+                        <a href="{{ route('dashboard') }}" class="font-bold text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">แผงควบคุม</a>
                     @else
-                        <a href="{{ route('login') }}" class="font-bold text-sm uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">Login</a>
-                        <a href="{{ route('register') }}" class="btn-gradient text-white px-7 py-3 rounded-2xl font-bold text-sm shadow-lg shadow-indigo-100 uppercase tracking-widest">Join Now</a>
+                        <a href="{{ route('login') }}" class="font-bold text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">เข้าสู่ระบบ</a>
+                        <a href="{{ route('register') }}" class="btn-gradient text-white px-6 py-2.5 rounded-2xl font-bold text-xs shadow-lg shadow-indigo-100 uppercase tracking-widest">เริ่มใช้งาน</a>
                     @endauth
                 @endif
             </div>
@@ -152,16 +152,16 @@
     <!-- Hero -->
     <section class="relative pt-32 pb-24 px-6 overflow-hidden">
         <div class="max-w-5xl mx-auto text-center stagger-item">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse italic">Revolutionizing Learning</span>
+            <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse italic">ปฏิวัติการเรียนรู้ของคุณ</span>
             <h1 class="text-6xl md:text-8xl font-black font-outfit hero-title mb-8 leading-[0.9] tracking-tight">
-                Unlock Your <br>Creative Mastery.
+                ปลดล็อกศักยภาพ <br>สู่ความเป็นเลิศ
             </h1>
             <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
-                Premium hands-on workshops led by world-class industry professionals. Level up your skills with our state-of-the-art learning platform.
+                เวิร์กช็อปคุณภาพสูงโดยผู้เชี่ยวชาญระดับแนวหน้า ยกระดับทักษะของคุณด้วยแพลตฟอร์มการเรียนรู้ที่ทันสมัยที่สุด
             </p>
             <div class="flex justify-center gap-6">
                 <a href="#explore" class="btn-gradient text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl flex items-center gap-3">
-                    Explore Workshops
+                    เลือกดูเวิร์กช็อป
                     <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7-7-7m14-8l-7 7-7-7"/></svg>
                 </a>
             </div>
@@ -173,8 +173,8 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 stagger-item">
                 <div class="max-w-xl">
-                    <h2 class="text-4xl font-black font-outfit text-slate-900 mb-4 leading-none lowercase"><span class="text-indigo-600">#</span> available sessions</h2>
-                    <p class="text-slate-500 font-medium">Limited spots available for each masterclass. Register early to secure your seat.</p>
+                    <h2 class="text-4xl font-black font-outfit text-slate-900 mb-4 leading-none lowercase"><span class="text-indigo-600">#</span> เวิร์กช็อปที่เปิดสอน</h2>
+                    <p class="text-slate-500 font-medium">ที่นั่งมีจำนวนจำกัดในแต่ละรอบ แนะนำให้ลงทะเบียนล่วงหน้าเพื่อรักษาสิทธิ์ของคุณ</p>
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="flex -space-x-3 overflow-hidden">
@@ -182,7 +182,7 @@
                         <img class="inline-block h-10 w-10 rounded-full ring-4 ring-white shadow-sm" src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ $i }}" alt="">
                         @endfor
                     </div>
-                    <span class="text-sm font-bold text-slate-400">Joined by 2k+ Students</span>
+                    <span class="text-sm font-bold text-slate-400">นักศึกษาร่วมเรียนแล้วกว่า 2,000+ คน</span>
                 </div>
             </div>
 
@@ -201,9 +201,9 @@
                         </div>
                         <div class="absolute top-6 right-6">
                             @if($event->is_active && $event->remaining_seats > 0)
-                                <span class="bg-indigo-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">Live</span>
+                                <span class="bg-indigo-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">เปิดรับสมัคร</span>
                             @else
-                                <span class="bg-rose-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">Closed</span>
+                                <span class="bg-rose-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">ปิดรับสมัคร</span>
                             @endif
                         </div>
                     </div>
@@ -211,7 +211,7 @@
                     <!-- Content -->
                     <div class="px-6 pb-6 flex flex-col grow">
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-wider">Expert</span>
+                            <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-wider">วิทยากร</span>
                             <span class="text-xs font-bold text-slate-400 capitalize">{{ $event->speaker }}</span>
                         </div>
                         <h3 class="text-2xl font-extrabold text-slate-900 mb-6 leading-tight h-16 line-clamp-2">{{ $event->title }}</h3>
@@ -219,7 +219,7 @@
                         <!-- Seat Logic -->
                         <div class="space-y-4 mb-8">
                             <div class="flex justify-between items-end">
-                                <span class="text-xs font-black text-slate-400 uppercase tracking-widest leading-none">Registration Progress</span>
+                                <span class="text-xs font-black text-slate-400 uppercase tracking-widest leading-none">ความคืบหน้าการจอง</span>
                                 <span class="text-sm font-black text-indigo-600 leading-none">{{ $event->registrations_count }} / {{ $event->total_seats }}</span>
                             </div>
                             <div class="progress-bar-container">
@@ -231,21 +231,21 @@
                         <div class="mt-auto pt-6 border-t border-slate-100/50 flex items-center justify-between">
                             @auth
                                 @if($event->is_registered)
-                                    <button disabled class="w-full bg-slate-100 text-slate-400 py-4 rounded-2xl font-black text-xs uppercase tracking-widest cursor-not-allowed">Registered Successfully</button>
+                                    <button disabled class="w-full bg-slate-100 text-slate-400 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest cursor-not-allowed">ลงทะเบียนสำเร็จแล้ว</button>
                                 @elseif($isClosed)
-                                    <button disabled class="w-full bg-slate-50 text-slate-300 py-4 rounded-2xl font-black text-xs uppercase tracking-widest cursor-not-allowed">Enrollment Ended</button>
+                                    <button disabled class="w-full bg-slate-50 text-slate-300 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest cursor-not-allowed">ปิดรับลงทะเบียน</button>
                                 @else
                                     <form action="{{ route('events.register') }}" method="POST" class="w-full">
                                         @csrf
                                         <input type="hidden" name="event_id" value="{{ $event->id }}">
-                                        <button type="submit" class="w-full btn-gradient text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-indigo-100 flex items-center justify-center gap-2">
-                                            Enroll Session
+                                        <button type="submit" class="w-full btn-gradient text-white py-3 rounded-xl font-bold text-sm shadow-xl shadow-indigo-100 flex items-center justify-center gap-2">
+                                            <span>ลงทะเบียนเข้าเรียน</span>
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                                         </button>
                                     </form>
                                 @endif
                             @else
-                                <a href="{{ route('login') }}" class="w-full border-2 border-slate-900 text-slate-900 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all text-center">Login to Enroll</a>
+                                <a href="{{ route('login') }}" class="w-full border-2 border-slate-900 text-slate-900 py-3 rounded-xl font-bold text-sm hover:bg-slate-900 hover:text-white transition-all text-center">เข้าสู่ระบบเพื่อสมัคร</a>
                             @endauth
                         </div>
                     </div>

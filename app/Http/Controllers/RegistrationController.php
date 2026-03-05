@@ -20,7 +20,7 @@ class RegistrationController extends Controller
                 : false;
         }
 
-        return view('events.index', compact('events'));
+        return view('welcome', compact('events'));
     }
 
     public function store(Request $request)

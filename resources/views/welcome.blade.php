@@ -156,7 +156,7 @@
         <div class="max-w-7xl mx-auto text-center stagger-item">
             <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse italic">ปฏิวัติการเรียนรู้ของคุณ</span>
             <h1 class="font-black hero-title mb-8 leading-[1.2] tracking-tight" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
-                ปลดล็อกศักยภาพ <br>สู่ความเป็นเลิศ
+                ปลดล็อกศักยภาพ <br>สู่ความเป็นเลิศ 123
             </h1>
             <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
                 เวิร์กช็อปคุณภาพสูงโดยผู้เชี่ยวชาญระดับแนวหน้า ยกระดับทักษะของคุณด้วยแพลตฟอร์มการเรียนรู้ที่ทันสมัยที่สุด

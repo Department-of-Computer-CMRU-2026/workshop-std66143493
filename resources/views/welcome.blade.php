@@ -3,173 +3,249 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Workshop CMS - Explore & Learn</title>
+    <title>Workshop CMS - Premium Learning Experience</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Scripts & Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
         :root {
-            --primary: #4F46E5;
-            --primary-dark: #4338CA;
-            --accent: #F59E0B;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --accent: #f59e0b;
+            --surface: rgba(255, 255, 255, 0.7);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #f8fafc;
-            color: #1e293b;
+            color: #0f172a;
+            overflow-x: hidden;
         }
 
-        .font-outfit {
-            font-family: 'Outfit', sans-serif;
+        .font-outfit { font-family: 'Outfit', sans-serif; }
+
+        /* Animated Mesh Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, rgba(236, 72, 153, 0.1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.1) 0, transparent 50%);
+            animation: mesh-flow 20s ease-in-out infinite alternate;
         }
 
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
+        @keyframes mesh-flow {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        .hero-gradient {
-            background: radial-gradient(circle at top right, #eef2ff 0%, #f8fafc 50%);
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            background: rgba(255, 255, 255, 0.8);
+            border-color: var(--primary);
+            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.15);
         }
 
-        .card-hover {
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.5);
+            filter: brightness(1.1);
         }
 
-        .btn-premium {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            transition: all 0.3s ease;
+        /* Premium Progress Bar */
+        .progress-bar-container {
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 999px;
+            overflow: hidden;
         }
 
-        .btn-premium:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 999px;
+            transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* Entrance Animations */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            background: linear-gradient(to right, #1e293b, #4338ca, #1e293b);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine 8s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
         }
     </style>
 </head>
-<body class="antialiased hero-gradient flex flex-col min-h-screen">
+<body class="antialiased flex flex-col min-h-screen">
+    <div class="mesh-bg"></div>
+
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center gap-2">
-                        <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
-                           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                        </div>
-                        <span class="text-2xl font-bold font-outfit tracking-tight text-slate-800">Workshop<span class="text-indigo-600">Hub</span></span>
-                    </div>
+    <nav class="sticky top-0 z-50 nav-blur">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center shadow-xl shadow-indigo-200 rotate-3 transform transition hover:rotate-0">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
-                <div class="flex items-center gap-4">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ route('dashboard') }}" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">แผงควบคุม</a>
-                        @else
-                            <a href="{{ route('login') }}" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">เข้าสู่ระบบ</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn-premium text-white px-6 py-2.5 rounded-full font-semibold shadow-md">สมัครสมาชิก</a>
-                            @endif
-                        @endauth
-                    @endif
-                </div>
+                <span class="text-2xl font-extrabold font-outfit tracking-tighter text-slate-900 leading-none">Workshop<span class="text-indigo-600">Pro</span></span>
+            </div>
+
+            <div class="flex items-center gap-6">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ route('dashboard') }}" class="font-bold text-sm uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">Workspace</a>
+                    @else
+                        <a href="{{ route('login') }}" class="font-bold text-sm uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">Login</a>
+                        <a href="{{ route('register') }}" class="btn-gradient text-white px-7 py-3 rounded-2xl font-bold text-sm shadow-lg shadow-indigo-100 uppercase tracking-widest">Join Now</a>
+                    @endauth
+                @endif
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-20 pb-16 px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-bold font-outfit text-slate-900 mb-6 tracking-tight leading-tight">
-                ยกระดับทักษะของคุณ <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">ด้วย Workshop ระดับพรีเมียม</span>
+    <!-- Hero -->
+    <section class="relative pt-32 pb-24 px-6 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center stagger-item">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse italic">Revolutionizing Learning</span>
+            <h1 class="text-6xl md:text-8xl font-black font-outfit hero-title mb-8 leading-[0.9] tracking-tight">
+                Unlock Your <br>Creative Mastery.
             </h1>
-            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                ค้นพบกิจกรรมที่น่าสนใจจากผู้เชี่ยวชาญ พร้อมลงทะเบียนเรียนรู้ได้ทันที ระบบของเราช่วยให้คุณจัดการการเรียนรู้ได้อย่างมีประสิทธิภาพ
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
+                Premium hands-on workshops led by world-class industry professionals. Level up your skills with our state-of-the-art learning platform.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#workshops" class="btn-premium text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-indigo-100 flex items-center gap-2">
-                    ดู Workshop ทั้งหมด
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <div class="flex justify-center gap-6">
+                <a href="#explore" class="btn-gradient text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl flex items-center gap-3">
+                    Explore Workshops
+                    <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7-7-7m14-8l-7 7-7-7"/></svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Workshop List Section -->
-    <section id="workshops" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-end justify-between mb-12 border-b border-slate-100 pb-8">
-                <div>
-                    <h2 class="text-3xl font-bold font-outfit text-slate-800 mb-2">กิจกรรมที่เปิดรับสมัคร</h2>
-                    <p class="text-slate-500">เลือก Workshop ที่คุณสนใจและสำรองที่นั่งได้เลย</p>
+    <!-- Workshops -->
+    <section id="explore" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 stagger-item">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-black font-outfit text-slate-900 mb-4 leading-none lowercase"><span class="text-indigo-600">#</span> available sessions</h2>
+                    <p class="text-slate-500 font-medium">Limited spots available for each masterclass. Register early to secure your seat.</p>
                 </div>
-                <div class="hidden md:block">
-                    <span class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold">พบ {{ $events->count() }} รายการ</span>
+                <div class="flex items-center gap-4">
+                    <div class="flex -space-x-3 overflow-hidden">
+                        @for($i=0; $i<5; $i++)
+                        <img class="inline-block h-10 w-10 rounded-full ring-4 ring-white shadow-sm" src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ $i }}" alt="">
+                        @endfor
+                    </div>
+                    <span class="text-sm font-bold text-slate-400">Joined by 2k+ Students</span>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @foreach($events as $event)
-                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm card-hover overflow-hidden flex flex-col h-full">
-                    <div class="h-48 bg-slate-100 relative overflow-hidden group">
-                        <!-- Simplified dynamic pattern instead of real image -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-violet-500/10 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-indigo-200 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                @foreach($events as $index => $event)
+                @php
+                    $percent = ($event->total_seats > 0) ? (min(100, round(($event->registrations_count / $event->total_seats) * 100))) : 100;
+                    $isClosed = !$event->is_active || ($event->remaining_seats <= 0);
+                @endphp
+                <div class="glass-card rounded-[2.5rem] p-4 flex flex-col h-full stagger-item" style="animation-delay: {{ $index * 0.1 }}s">
+                    <!-- Image Area -->
+                    <div class="h-64 rounded-[2rem] bg-slate-900 mb-8 relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/30 to-rose-500/30 group-hover:scale-110 transition-transform duration-700"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-50 transition-opacity">
+                             <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                         </div>
-                        <div class="absolute top-4 right-4">
+                        <div class="absolute top-6 right-6">
                             @if($event->is_active && $event->remaining_seats > 0)
-                                <span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">เปิดรับสมัคร</span>
-                            @elseif(!$event->is_active)
-                                <span class="bg-rose-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">ปิดโดยแอดมิน</span>
+                                <span class="bg-indigo-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">Live</span>
                             @else
-                                <span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">ที่นั่งเต็ม</span>
+                                <span class="bg-rose-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">Closed</span>
                             @endif
                         </div>
                     </div>
-                    <div class="p-8 flex flex-col grow">
-                        <div class="flex items-center gap-2 mb-4">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
-                                <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                            </div>
-                            <span class="text-sm font-medium text-slate-600">{{ $event->speaker }}</span>
+
+                    <!-- Content -->
+                    <div class="px-6 pb-6 flex flex-col grow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-wider">Expert</span>
+                            <span class="text-xs font-bold text-slate-400 capitalize">{{ $event->speaker }}</span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-3 line-clamp-2 h-14">{{ $event->title }}</h3>
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-6 leading-tight h-16 line-clamp-2">{{ $event->title }}</h3>
                         
-                        <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between">
-                            <div class="flex flex-col">
-                                <span class="text-xs text-slate-400 uppercase font-bold tracking-widest">ที่นั่งว่าง</span>
-                                <span class="text-lg font-bold text-indigo-600">{{ $event->remaining_seats }} / {{ $event->total_seats }}</span>
+                        <!-- Seat Logic -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between items-end">
+                                <span class="text-xs font-black text-slate-400 uppercase tracking-widest leading-none">Registration Progress</span>
+                                <span class="text-sm font-black text-indigo-600 leading-none">{{ $event->registrations_count }} / {{ $event->total_seats }}</span>
                             </div>
-                            
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: {{ $percent }}%"></div>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="mt-auto pt-6 border-t border-slate-100/50 flex items-center justify-between">
                             @auth
                                 @if($event->is_registered)
-                                    <button disabled class="bg-slate-100 text-slate-400 px-6 py-2.5 rounded-xl font-bold cursor-not-allowed">ลงทะเบียนแล้ว</button>
-                                @elseif(!$event->is_active || $event->remaining_seats <= 0)
-                                    <button disabled class="bg-slate-50 text-slate-300 px-6 py-2.5 rounded-xl font-bold cursor-not-allowed">ปิดรับ</button>
+                                    <button disabled class="w-full bg-slate-100 text-slate-400 py-4 rounded-2xl font-black text-xs uppercase tracking-widest cursor-not-allowed">Registered Successfully</button>
+                                @elseif($isClosed)
+                                    <button disabled class="w-full bg-slate-50 text-slate-300 py-4 rounded-2xl font-black text-xs uppercase tracking-widest cursor-not-allowed">Enrollment Ended</button>
                                 @else
-                                    <form action="{{ route('events.register') }}" method="POST">
+                                    <form action="{{ route('events.register') }}" method="POST" class="w-full">
                                         @csrf
                                         <input type="hidden" name="event_id" value="{{ $event->id }}">
-                                        <button type="submit" class="btn-premium text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-indigo-100">ลงทะเบียน</button>
+                                        <button type="submit" class="w-full btn-gradient text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-indigo-100 flex items-center justify-center gap-2">
+                                            Enroll Session
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                        </button>
                                     </form>
                                 @endif
                             @else
-                                <a href="{{ route('login') }}" class="text-indigo-600 hover:text-indigo-700 font-bold border-2 border-indigo-600 px-5 py-2 rounded-xl transition-all">ลงชื่อเข้าใช้</a>
+                                <a href="{{ route('login') }}" class="w-full border-2 border-slate-900 text-slate-900 py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all text-center">Login to Enroll</a>
                             @endauth
                         </div>
                     </div>
@@ -180,13 +256,18 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="mb-4">© {{ date('Y') }} WorkshopHub. Created with Laravel and Passion.</p>
-            <div class="flex justify-center gap-6 text-sm">
-                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-white transition-colors">Contact Us</a>
+    <footer class="py-20 px-6 border-t border-slate-100 mt-auto bg-white/30 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-3 opacity-50">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <span class="text-xl font-bold font-outfit text-slate-900">WorkshopPro</span>
+            </div>
+            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest italic text-center">Engineered for Creative Excellence</p>
+            <div class="flex gap-8">
+                <a href="#" class="text-xs font-black text-slate-400 hover:text-indigo-600 transition-colors uppercase tracking-widest">Twitter</a>
+                <a href="#" class="text-xs font-black text-slate-400 hover:text-indigo-600 transition-colors uppercase tracking-widest">Discord</a>
             </div>
         </div>
     </footer>

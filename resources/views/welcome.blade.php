@@ -8,7 +8,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Scripts & Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -23,10 +23,11 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Anuphan', 'Plus Jakarta Sans', sans-serif;
             background-color: #f8fafc;
             color: #0f172a;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .font-outfit { font-family: 'Outfit', sans-serif; }
@@ -153,7 +154,7 @@
     <section class="relative pt-32 pb-24 px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto text-center stagger-item">
             <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse italic">ปฏิวัติการเรียนรู้ของคุณ</span>
-            <h1 class="text-7xl md:text-9xl font-black font-outfit hero-title mb-8 leading-[0.9] tracking-tighter">
+            <h1 class="text-7xl md:text-9xl font-black hero-title mb-8 leading-[1.1] tracking-tight">
                 ปลดล็อกศักยภาพ <br>สู่ความเป็นเลิศ
             </h1>
             <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">

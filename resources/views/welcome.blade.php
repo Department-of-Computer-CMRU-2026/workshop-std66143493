@@ -67,10 +67,11 @@
         }
 
         .nav-blur {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.006);
         }
 
         .btn-gradient {
@@ -128,7 +129,7 @@
     <div class="mesh-bg"></div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 nav-blur">
+    <nav class="sticky top-0 z-[100] nav-blur">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center shadow-xl shadow-indigo-200 rotate-3 transform transition hover:rotate-0">
@@ -170,7 +171,7 @@
     </section>
 
     <!-- Workshops -->
-    <section id="explore" class="py-32 px-6">
+    <section id="explore" class="py-32 px-6 scroll-mt-20">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 stagger-item">
                 <div class="max-w-3xl text-left">

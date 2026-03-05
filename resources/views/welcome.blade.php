@@ -67,7 +67,7 @@
                                 <a href="https://laravel.com/docs" target="_blank" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] ms-1">
                                     <span>Documentation</span>
                                     <svg
-                                        width="10"
+                                        width="11"
                                         height="11"
                                         viewBox="0 0 10 11"
                                         fill="none"

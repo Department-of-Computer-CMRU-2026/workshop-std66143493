@@ -154,7 +154,7 @@
     <section class="relative pt-32 pb-24 px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto text-center stagger-item">
             <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse italic">ปฏิวัติการเรียนรู้ของคุณ</span>
-            <h1 class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black hero-title mb-10 leading-[1.15] tracking-tight">
+            <h1 class="font-black hero-title mb-10 leading-[1.1] tracking-tighter" style="font-size: clamp(4rem, 12vw, 14rem);">
                 ปลดล็อกศักยภาพ <br>สู่ความเป็นเลิศ
             </h1>
             <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
@@ -173,9 +173,9 @@
     <section id="explore" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 stagger-item">
-                <div class="max-w-3xl text-left">
-                    <h2 class="text-5xl md:text-7xl font-black text-slate-900 mb-6 leading-none lowercase"><span class="text-indigo-600">#</span> เวิร์กช็อปที่เปิดสอน</h2>
-                    <p class="text-2xl text-slate-500 font-medium leading-relaxed">ที่นั่งมีจำนวนจำกัดในแต่ละรอบ แนะนำให้ลงทะเบียนล่วงหน้าเพื่อรักษาสิทธิ์ของคุณ</p>
+                <div class="max-w-4xl text-left">
+                    <h2 class="font-black text-slate-900 mb-6 leading-none lowercase" style="font-size: clamp(3rem, 8vw, 8rem);"><span class="text-indigo-600">#</span> เวิร์กช็อปที่เปิดสอน</h2>
+                    <p class="text-2xl text-slate-500 font-medium leading-relaxed">ที่ั่งมีจำนวนจำกัดในแต่ละรอบ แนะนำให้ลงทะเบียนล่วงหน้าเพื่อรักษาสิทธิ์ของคุณ</p>
                 </div>
                 <div class="flex items-center gap-4">
                     <div class="flex -space-x-3 overflow-hidden">

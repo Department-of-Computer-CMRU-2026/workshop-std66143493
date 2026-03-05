@@ -141,7 +141,13 @@
             <div class="flex items-center gap-6">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ route('dashboard') }}" class="font-bold text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">แผงควบคุม</a>
+                        <div class="flex items-center gap-6">
+                            <a href="{{ route('dashboard') }}" class="font-bold text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">แผงควบคุม</a>
+                            <form method="POST" action="{{ route('logout') }}" x-data>
+                                @csrf
+                                <button type="submit" class="font-bold text-xs uppercase tracking-widest text-rose-500 hover:text-rose-600 transition-colors">ออกจากระบบ</button>
+                            </form>
+                        </div>
                     @else
                         <a href="{{ route('login') }}" class="font-bold text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-600 transition-colors">เข้าสู่ระบบ</a>
                         <a href="{{ route('register') }}" class="btn-gradient text-white px-6 py-2.5 rounded-2xl font-bold text-xs shadow-lg shadow-indigo-100 uppercase tracking-widest">เริ่มใช้งาน</a>
